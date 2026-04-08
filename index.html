@@ -81,11 +81,8 @@ nav {
 }
 .nav-menu a span { color: var(--accent); font-size:10px; margin-right:4px; opacity:0.7; }
 .nav-menu a:hover { color: var(--accent2); }
-.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; z-index:101; }
-.hamburger span { display:block; width:24px; height:2px; background:var(--text); transition:all .3s; transform-origin:center; }
-.hamburger.active span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
-.hamburger.active span:nth-child(2) { opacity:0; transform:scaleX(0); }
-.hamburger.active span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
+.hamburger span { display:block; width:24px; height:2px; background:var(--text); transition:.3s; }
 
 /* SECTIONS */
 section { position: relative; z-index: 2; padding: 100px 60px; }
@@ -418,189 +415,20 @@ footer p span { color:var(--accent); }
 .reveal.visible { opacity:1; transform:translateY(0); }
 .divider { height:1px; background:linear-gradient(90deg,transparent,var(--border),transparent); margin:0 60px; position:relative; z-index:2; }
 
-/* ══════════════════════════════════════
-   RESPONSIVE — LAPTOP  (≤ 1280px)
-══════════════════════════════════════ */
-@media(max-width:1280px){
-  nav { padding:18px 40px; }
-  section { padding:90px 40px; }
-  #home { padding:110px 40px 60px; }
-  .hero-name { font-size:clamp(44px,5.5vw,72px); }
-  .hero-right { flex:0 0 380px; }
-  .card-3d { width:290px; height:390px; }
-  .about-grid { gap:50px; }
-  .divider { margin:0 40px; }
-  footer { padding:24px 40px; }
-}
-
-/* ══════════════════════════════════════
-   RESPONSIVE — TABLET  (≤ 1024px)
-══════════════════════════════════════ */
-@media(max-width:1024px){
-  nav { padding:16px 28px; }
-  section { padding:80px 28px; }
-  #home { padding:100px 28px 60px; gap:40px; }
-  .hero-left { max-width:100%; }
-  .hero-right { flex:0 0 320px; }
-  .card-3d { width:270px; height:360px; }
-  .card-3d-inner { padding:28px; gap:16px; }
-  .card-name { font-size:19px; }
-  .hero-name { font-size:clamp(38px,5vw,60px); }
-  .about-grid { grid-template-columns:1fr 1.4fr; gap:36px; }
-  .about-img-box { min-height:300px; }
-  .projects-grid { grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
-  .certs-grid { grid-template-columns:repeat(2,1fr); }
-  .section-title { font-size:clamp(28px,3.5vw,44px); }
-  .divider { margin:0 28px; }
-  footer { padding:20px 28px; }
-}
-
-/* ══════════════════════════════════════
-   RESPONSIVE — MOBILE  (≤ 768px)
-══════════════════════════════════════ */
-@media(max-width:768px){
-  /* Hide custom cursor on touch devices */
-  #cursor, #cursor-ring { display:none; }
-  body { cursor:auto; }
-
-  nav { padding:14px 20px; }
-  .nav-menu {
-    display:none; position:absolute; top:100%; left:0; right:0;
-    flex-direction:column; background:rgba(5,5,16,0.98);
-    padding:24px 20px; gap:18px;
-    border-bottom:1px solid var(--border);
-    backdrop-filter:blur(20px);
-  }
+@media(max-width:960px) {
+  nav { padding:16px 24px; }
+  .nav-menu { display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; background:rgba(5,5,16,0.97); padding:24px; gap:20px; border-bottom:1px solid var(--border); }
   .nav-menu.open { display:flex; }
-  .nav-menu a { font-size:15px; padding:4px 0; }
   .hamburger { display:flex; }
-
-  /* Hero stacks vertically */
-  #home {
-    flex-direction:column; align-items:flex-start;
-    padding:100px 20px 60px; gap:0;
-  }
-  .hero-right {
-    order:-1; flex:none; width:100%;
-    display:flex; justify-content:center; margin-bottom:36px;
-  }
-  .card-3d { width:min(280px, 85vw); height:360px; }
-  .card-3d-inner { padding:24px; gap:14px; }
-  .card-avatar { width:72px; height:72px; font-size:28px; }
-  .card-name { font-size:18px; }
-  .card-role { font-size:10px; letter-spacing:1px; }
-  .hero-left { width:100%; }
-  .hero-tag { font-size:11px; padding:5px 14px; }
-  .hero-name { font-size:clamp(36px, 10vw, 54px); letter-spacing:-1px; margin-bottom:16px; }
-  .hero-typed { font-size:15px; }
-  .typed-text { font-size:14px; }
-  .hero-desc { font-size:14px; margin-bottom:28px; max-width:100%; }
-  .hero-btns { gap:12px; }
-  .btn { padding:12px 24px; font-size:13px; }
-  .hero-stats { gap:24px; padding-top:28px; }
-  .stat-num { font-size:26px; }
-  .stat-label { font-size:10px; }
-
-  section { padding:64px 20px; }
-  .section-title { font-size:clamp(26px,7vw,38px); }
-  .section-header { margin-bottom:40px; }
-
-  /* About */
-  .about-grid { grid-template-columns:1fr; gap:32px; }
-  .about-img-box { min-height:240px; aspect-ratio:4/3; }
-  .about-img-box i { font-size:72px; }
-  .about-corner { font-size:9px; padding:4px 10px; }
-  .about-corner.tl { top:-12px; left:-8px; }
-  .about-corner.br { bottom:-12px; right:-8px; }
-  .about-text h3 { font-size:22px; }
-  .about-text p { font-size:13px; }
-  .about-info { grid-template-columns:1fr; gap:10px; }
-  .info-item { font-size:12px; padding:10px 12px; }
-
-  /* Skills */
-  .skill-item { padding:12px 16px; min-width:110px; }
-  .skill-item i { font-size:18px; }
-  .skill-item span { font-size:12px; }
-  .skills-row { gap:10px; }
-
-  /* Projects */
-  .projects-grid { grid-template-columns:1fr; gap:20px; }
-  .project-thumb { height:160px; font-size:44px; }
-  .project-body { padding:20px; }
-  .project-body h3 { font-size:15px; }
-  .project-body p { font-size:12px; }
-
-  /* Education */
-  .edu-card { padding:20px; gap:16px; flex-direction:column; }
-  .edu-icon { width:44px; height:44px; font-size:18px; border-radius:10px; }
-  .edu-info h3 { font-size:14px; }
-  .edu-info .school { font-size:12px; }
-  .edu-meta { gap:8px; }
-  .edu-badge { font-size:10px; padding:3px 10px; }
-
-  /* Certs */
-  .certs-grid { grid-template-columns:1fr 1fr; gap:14px; }
-  .cert-card { padding:20px; }
-  .cert-card h3 { font-size:13px; }
-  .cert-icon-wrap { width:40px; height:40px; font-size:18px; margin-bottom:12px; }
-
-  /* Contact */
-  .contact-grid { grid-template-columns:1fr; gap:40px; }
-  .contact-info h3 { font-size:20px; }
-  .contact-info p { font-size:13px; margin-bottom:24px; }
-  .contact-item { padding:12px 14px; gap:12px; }
-  .contact-item-icon { width:38px; height:38px; font-size:14px; }
+  #home { flex-direction:column; padding:120px 24px 60px; }
+  .hero-right { order:-1; margin-bottom:40px; flex:none; }
+  .card-3d { width:260px; height:340px; }
+  .about-grid { grid-template-columns:1fr; gap:40px; }
+  .contact-grid { grid-template-columns:1fr; }
   .form-row { grid-template-columns:1fr; }
-  .form-group input, .form-group textarea { padding:11px 14px; font-size:13px; }
-  .btn-submit { padding:12px 28px; font-size:13px; }
-
-  /* Footer */
-  footer { padding:20px; flex-direction:column; text-align:center; gap:16px; }
-  footer p { font-size:11px; }
-
-  .divider { margin:0 20px; }
-  #scrollTop { bottom:20px; right:20px; width:40px; height:40px; font-size:14px; }
-}
-
-/* ══════════════════════════════════════
-   RESPONSIVE — SMALL PHONE  (≤ 480px)
-══════════════════════════════════════ */
-@media(max-width:480px){
-  nav { padding:12px 16px; }
-  .nav-brand { font-size:18px; }
-  section { padding:56px 16px; }
-  #home { padding:90px 16px 48px; }
-
-  .card-3d { width:min(260px, 90vw); height:340px; }
-  .hero-name { font-size:clamp(32px, 10vw, 48px); }
-  .hero-btns { flex-direction:column; width:100%; }
-  .btn { width:100%; justify-content:center; }
-  .hero-stats { gap:16px; }
-  .stat-num { font-size:22px; }
-
-  .certs-grid { grid-template-columns:1fr; }
-  .cert-card { padding:18px; }
-
-  .about-info { grid-template-columns:1fr; }
-
-  .section-title { font-size:clamp(24px,8vw,34px); }
-  .edu-card { flex-direction:column; }
-
-  .contact-items { gap:12px; }
-  .form-group label { font-size:10px; }
-}
-
-/* ══════════════════════════════════════
-   TOUCH: disable 3D tilt animation on
-   mobile (no hover events)
-══════════════════════════════════════ */
-@media(hover:none){
-  .card-3d { animation: cardFloat 5s ease-in-out infinite !important; }
-  .skill-item:hover { transform:none; }
-  .project-card:hover { transform:none; }
-  .cert-card:hover { transform:none; }
-  .edu-card:hover { transform:none; }
-  .contact-item:hover { transform:none; }
+  section { padding:80px 24px; }
+  footer { padding:20px 24px; flex-direction:column; text-align:center; }
+  .divider { margin:0 24px; }
 }
 </style>
 </head>
@@ -709,7 +537,7 @@ footer p span { color:var(--accent); }
       <p>Enthusiastic and detail-oriented Java Full Stack Developer with strong foundational knowledge in Java, Spring Boot, HTML, CSS, JavaScript, React.js, and MySQL. Passionate about building dynamic, responsive, and scalable web applications.</p>
       <p>Familiar with RESTful API integration and version control using Git. Quick learner with strong problem-solving skills and a dedication to continuous learning. Eager to contribute to team success in a challenging development environment.</p>
       <div class="about-info">
-        <div class="info-item"><i class="fa-solid fa-envelope"></i><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4f212e392a2a213d767a79790f28222e2623612c2022">[email&#160;protected]</a></span></div>
+        <div class="info-item"><i class="fa-solid fa-envelope"></i><span>naveenr9566@gmail.com</span></div>
         <div class="info-item"><i class="fa-solid fa-phone"></i><span>+91 9566013841</span></div>
         <div class="info-item"><i class="fa-solid fa-location-dot"></i><span>Chennai, India</span></div>
         <div class="info-item"><i class="fa-brands fa-linkedin"></i><span>linkedin.com/in/naveen9566</span></div>
@@ -735,8 +563,8 @@ footer p span { color:var(--accent); }
         <div class="skill-item"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
         <div class="skill-item"><i class="fa-brands fa-python"></i><span>Python</span></div>
         <div class="skill-item"><i class="fa-solid fa-database"></i><span>SQL</span></div>
-        <div class="skill-item"><i class="fa-solid fa-c"></i><span>C</span></div>
-        <div class="skill-item"><i class="fa-solid fa-code"></i><span>C++</span></div>
+        <div class="skill-item"><i class="fa-solid fa-c"></i><span>css</span></div>
+        <div class="skill-item"><i class="fa-solid fa-code"></i><span>Html</span></div>
       </div>
     </div>
     <div class="skill-group reveal">
@@ -926,7 +754,7 @@ footer p span { color:var(--accent); }
       <div class="contact-items">
         <div class="contact-item">
           <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
-          <div class="contact-item-text"><strong>Email</strong><a href="/cdn-cgi/l/email-protection#0e606f786b6b607c373b38384e69636f6762206d6163"><span class="__cf_email__" data-cfemail="9ef0ffe8fbfbf0eca7aba8a8def9f3fff7f2b0fdf1f3">[email&#160;protected]</span></a></div>
+          <div class="contact-item-text"><strong>Email</strong><a href="mailto:naveenr9566@gmail.com">naveenr9566@gmail.com</a></div>
         </div>
         <div class="contact-item">
           <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -974,7 +802,7 @@ footer p span { color:var(--accent); }
   <div class="footer-links">
     <a href="https://www.linkedin.com/in/naveen9566" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
     <a href="https://github.com" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-    <a href="/cdn-cgi/l/email-protection#620c031407070c105b57545422050f030b0e4c010d0f" title="Email"><i class="fa-solid fa-envelope"></i></a>
+    <a href="mailto:naveenr9566@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
     <a href="tel:9566013841" title="Phone"><i class="fa-solid fa-phone"></i></a>
   </div>
 </footer>
@@ -984,27 +812,26 @@ footer p span { color:var(--accent); }
 </button>
 
 <!-- THREE.JS CDN -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 /* ── THREE.JS 3D PARTICLE BACKGROUND ── */
 (function(){
   const canvas = document.getElementById('bg-canvas');
-  const isMobile = window.innerWidth <= 768;
-  const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:!isMobile});
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
+  const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
   renderer.setSize(window.innerWidth, window.innerHeight);
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 1000);
   camera.position.z = 5;
 
-  // Fewer particles on mobile for performance
+  // Floating particles
   const geo = new THREE.BufferGeometry();
-  const count = isMobile ? 400 : 1000;
+  const count = 1000;
   const pos = new Float32Array(count * 3);
   for(let i=0;i<count*3;i++) pos[i]=(Math.random()-0.5)*30;
   geo.setAttribute('position', new THREE.BufferAttribute(pos,3));
-  const particles = new THREE.Points(geo, new THREE.PointsMaterial({size:0.05,color:0x6c63ff,transparent:true,opacity:0.45}));
+  const particles = new THREE.Points(geo, new THREE.PointsMaterial({size:0.04,color:0x6c63ff,transparent:true,opacity:0.5}));
   scene.add(particles);
 
   // Wireframe toroidal knot
@@ -1110,32 +937,8 @@ window.addEventListener('scroll',()=>{
 });
 
 /* ── HAMBURGER ── */
-function toggleMenu(){
-  const menu = document.getElementById('navMenu');
-  const ham = document.querySelector('.hamburger');
-  menu.classList.toggle('open');
-  ham.classList.toggle('active');
-}
-document.querySelectorAll('.nav-menu a').forEach(a=>a.addEventListener('click',()=>{
-  document.getElementById('navMenu').classList.remove('open');
-  document.querySelector('.hamburger').classList.remove('active');
-}));
-
-/* ── TOUCH TILT for 3D CARD on mobile ── */
-if('ontouchstart' in window){
-  heroCard.addEventListener('touchmove',e=>{
-    const t=e.touches[0];
-    const r=heroCard.getBoundingClientRect();
-    const x=(t.clientX-r.left)/r.width-0.5;
-    const y=(t.clientY-r.top)/r.height-0.5;
-    heroCard.style.transform=`rotateY(${x*16}deg) rotateX(${-y*10}deg)`;
-    heroCard.style.animation='none';
-  },{passive:true});
-  heroCard.addEventListener('touchend',()=>{
-    heroCard.style.transform='';
-    setTimeout(()=>{ heroCard.style.animation=''; },50);
-  });
-}
+function toggleMenu(){ document.getElementById('navMenu').classList.toggle('open'); }
+document.querySelectorAll('.nav-menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navMenu').classList.remove('open')));
 
 /* ── SCROLL REVEAL ── */
 const obs=new IntersectionObserver(entries=>{
@@ -1159,4 +962,14 @@ const cObs=new IntersectionObserver(entries=>{
 },{threshold:0.5});
 document.querySelectorAll('.counter').forEach(el=>cObs.observe(el));
 
-/* ─
+/* ── CONTACT FORM ── */
+function handleSubmit(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('button');
+  btn.innerHTML='<i class="fa-solid fa-check"></i> Sent!';
+  btn.style.background='linear-gradient(135deg,#22c55e,#16a34a)';
+  setTimeout(()=>{ btn.innerHTML='Send Message <i class="fa-solid fa-paper-plane"></i>'; btn.style.background=''; e.target.reset(); },3000);
+}
+</script>
+</body>
+</html>
